@@ -1,0 +1,46 @@
+# Kompass on the team's workshop VM, next to Abdul's stack (/srv/app). deploy.sh runs it: see README.md.
+# Its own names (kompass-live), so a deploy under the old name "kompass" cannot replace it.
+name: kompass-live
+
+services:
+  kompass:
+    build:
+      context: ..
+      args:
+        KOMPASS_BASE: /kompass/        # both proxies serve Kompass under this path
+    image: kompass-live
+    container_name: kompass-live       # the proxies reach it as kompass-live:8787
+    restart: unless-stopped
+    env_file:
+      - path: .env                     # API_URL, MODEL, BEARER for the assistant, copied from your .env by deploy.sh
+        required: false
+    environment:
+      INSIGHTS_URL: http://service:8100   # Abdul's insights service, on the same network
+    volumes:
+      - kompass-data:/data             # workspace and logs; Docker keeps volumes on the data disk (/srv/docker)
+    networks:
+      - app
+
+  # HTTPS on VM port 443, public as https://130.83.85.181:44443, with the team's self-signed certificate.
+  tls:
+    image: nginx:1.27-alpine
+    container_name: kompass-live-tls
+    restart: unless-stopped
+    depends_on:
+      - kompass
+    ports:
+      - "443:443"
+    volumes:
+      - ./nginx-tls.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx-kompass.conf:/etc/nginx/kompass.conf:ro
+      - ${CERT_DIR:-/home/wsvm44-admin/nba-certs}:/certs:ro
+    networks:
+      - app
+
+networks:
+  app:
+    external: true
+    name: app_default                  # Abdul's compose network: dashboard (nginx) and service
+
+volumes:
+  kompass-data:

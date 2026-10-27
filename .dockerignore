@@ -1,0 +1,17 @@
+**/node_modules
+**/.DS_Store
+.git
+.claude
+**/.env
+.env.*
+deploy
+demo
+desktop
+docs
+maingau-master
+*.xlsx
+*.zip
+web/dist
+server/logs
+server/workspace.json
+server/data/runtime

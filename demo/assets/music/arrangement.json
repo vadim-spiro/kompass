@@ -1,0 +1,61 @@
+{
+  "bpm": 120,
+  "total_seconds": 134.695,
+  "sections": [
+    {
+      "start": 0,
+      "kind": "tension"
+    },
+    {
+      "start": 35.178,
+      "kind": "build"
+    },
+    {
+      "start": 43,
+      "kind": "drop"
+    },
+    {
+      "start": 51,
+      "kind": "groove"
+    },
+    {
+      "start": 75,
+      "kind": "stop"
+    },
+    {
+      "start": 75.5,
+      "kind": "groove"
+    },
+    {
+      "start": 87.5,
+      "kind": "build"
+    },
+    {
+      "start": 89.5,
+      "kind": "drop"
+    },
+    {
+      "start": 109.5,
+      "kind": "stop"
+    },
+    {
+      "start": 110,
+      "kind": "groove"
+    },
+    {
+      "start": 126,
+      "kind": "outro"
+    }
+  ],
+  "hits": [
+    5.51,
+    12.372,
+    13.724,
+    43,
+    75.5,
+    89.5,
+    90.852,
+    110,
+    126
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "about": "Voiceover of the Kompass demo video. `text` is what the line says (subtitles, SCRIPT.md); `say` is the same line spelled for the speech model where it would mispronounce it (Jan → Yan, AI → A.I., numbers as words). Change a line, then run `npm --prefix demo run vo`: only changed lines are generated again. `seed` picks the take; change it to re-roll one line.",
+  "voice": "ryan",
+  "lang": "english",
+  "lines": [
+    {
+      "id": "hook_1",
+      "text": "17:22. Jan's car won't charge. Again.",
+      "say": "Five twenty-two p.m. Yan's car won't charge. Again.",
+      "seed": 11
+    },
+    {
+      "id": "hook_2",
+      "text": "The next morning, his inbox lights up: “Switch your tariff and save!”",
+      "say": "The next morning, his inbox lights up: Switch your tariff, and save!",
+      "seed": 11
+    },
+    {
+      "id": "hook_3",
+      "text": "Wrong message. Wrong moment.",
+      "seed": 11
+    },
+    {
+      "id": "problem_1",
+      "text": "MAINGAU knows a lot about its customers: contracts, charging, tickets, consents. 647 signals on a single day.",
+      "say": "Mine-gow knows a lot about its customers. Contracts. Charging. Tickets. Consents. Six hundred and forty-seven signals, on a single day.",
+      "seed": 11
+    },
+    {
+      "id": "problem_2",
+      "text": "But the newsletter still goes to everyone, with the same text. 0.6 % convert, and nobody can say what worked.",
+      "say": "But the newsletter still goes to everyone, with the same text. Zero point six percent convert. And nobody can say what worked.",
+      "seed": 11
+    },
+    {
+      "id": "problem_3",
+      "text": "What if every customer got the next right step? At the right moment, on a channel they said yes to.",
+      "seed": 11
+    },
+    {
+      "id": "reveal",
+      "text": "Meet Kompass. It turns every customer signal into the next right step, and a human approves every message.",
+      "say": "Meet Kompass. It turns every customer signal into the next right step. And a human approves every message.",
+      "seed": 11
+    },
+    {
+      "id": "data",
+      "text": "Kompass reads every event from our insights service the moment it happens. Every event re-ranks that customer: churn risk, the best offer and what it's worth, and the best time to reach them.",
+      "seed": 11
+    },
+    {
+      "id": "home",
+      "text": "Clara from CRM starts her day here. Every draft shows its channel, its offer, what it's worth, and why. Nothing goes out without her.",
+      "seed": 11
+    },
+    {
+      "id": "service_1",
+      "text": "Service comes before sales.",
+      "seed": 11
+    },
+    {
+      "id": "service_2",
+      "text": "Remember Jan? In service mode, Mehmet sees the failed charge first. Kompass puts the fix on top, and holds back every offer while Jan is upset.",
+      "say": "Remember Yan? In service mode, Mehmet sees the failed charge first. Kompass puts the fix on top, and holds back every offer, while Yan is upset.",
+      "seed": 11
+    },
+    {
+      "id": "ai_1",
+      "text": "And you can use AI to do everything.",
+      "say": "And you can use A.I. to do everything.",
+      "seed": 11
+    },
+    {
+      "id": "ai_2",
+      "text": "Just ask. Kompass opens a campaign, picks the audience and the offer, finds each customer's best time, and writes every message, in Du and in Sie.",
+      "say": "Just ask. Kompass opens a campaign, picks the audience and the offer, finds each customer's best time, and writes every message. In doo, and in zee.",
+      "seed": 11
+    },
+    {
+      "id": "ai_3",
+      "text": "Charts. Customer lists. Campaigns. It works right on screen, where you can watch it.",
+      "seed": 11
+    },
+    {
+      "id": "guard_1",
+      "text": "But it can't send.",
+      "seed": 11
+    },
+    {
+      "id": "guard_2",
+      "text": "Consent, open complaints and contact limits are checked for every single customer. Clara approves, and only then does anything go out.",
+      "seed": 11
+    },
+    {
+      "id": "proof",
+      "text": "Every campaign keeps a control group, so you can prove what worked.",
+      "seed": 11
+    },
+    {
+      "id": "close",
+      "text": "Kompass. Live data in. The next right step out. Humans in control.",
+      "seed": 11
+    }
+  ]
+}

@@ -1,0 +1,339 @@
+openapi: 3.1.0
+info:
+  title: Kompass workspace API
+  version: 2.0.0
+  summary: What Kompass adds on top of the team's insights service.
+  description: |
+    Customer data, decisions (best action, ΔCLV), campaign plans, savings and governance come from the
+    team's insights service (`maingau-master/customer-intelligence/service`, its own OpenAPI spec is the
+    data contract). This server is the workspace layer for the Kompass UI:
+
+    - **Email builder**: emails are lists of smart blocks that render per customer (Du/Sie, service first,
+      real savings only) and pass guardrails.
+    - **Campaigns**: audience → plan (via the service) → email → follow-up → approvals → simulated launch → results
+      against a control group.
+    - **Automations**: n8n-style flows on the event stream. A consent & exclusions gate and an approval node are
+      always present; hits become proposals.
+    - **Proposals**: every message waits for human approval. Nothing is sent by this prototype.
+    - **Settings**: contact terms, custom commands (flow nodes), custom blocks (builder blocks), brand voice.
+    - **Assistant**: tool-calling chat. Write tools return proposal cards that the user applies.
+
+    Read-only pass-through to the insights service: `GET|POST /api/insights/{path}`.
+servers:
+  - url: http://localhost:8787/api
+tags:
+  - name: Customers
+  - name: Emails
+  - name: Campaigns
+  - name: Automations
+  - name: Approvals
+  - name: Settings
+  - name: Assistant
+paths:
+  /status:
+    get:
+      summary: Health of the insights service, the LLM and the workspace
+      responses: { "200": { description: OK } }
+  /home:
+    get:
+      summary: What needs attention today (approvals, campaigns, automation hits, KPIs, top pains)
+      responses: { "200": { description: OK } }
+
+  /customers/search:
+    post:
+      tags: [Customers]
+      summary: Customer list with synthetic identity; text search over id, name, email, city, products
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                audience: { $ref: "#/components/schemas/Audience" }
+                q: { type: string }
+                sort: { type: string, enum: [value_at_risk, clv, churn, best_dclv, margin, customer_id] }
+                desc: { type: boolean }
+                limit: { type: integer, maximum: 500 }
+                offset: { type: integer }
+      responses: { "200": { description: Page of customers } }
+  /customers/{id}/360:
+    get:
+      tags: [Customers]
+      summary: Profile, problems, contracts, orders, timeline, spend and Kompass history of one customer
+      parameters: [{ $ref: "#/components/parameters/Id" }]
+      responses: { "200": { description: OK }, "404": { description: Unknown customer } }
+
+  /blocks:
+    get:
+      tags: [Emails]
+      summary: Block catalogue (built-in and custom), show-if fields, placeholders
+      responses: { "200": { description: OK } }
+  /render:
+    post:
+      tags: [Emails]
+      summary: Render an email for one customer, with guardrail checks
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, customerId]
+              properties:
+                email: { $ref: "#/components/schemas/EmailDoc" }
+                customerId: { type: string }
+                channel: { type: string, description: '"auto" picks the best consented channel' }
+      responses: { "200": { description: Rendered email } }
+  /render/variants:
+    post:
+      tags: [Emails]
+      summary: Which version (service, offer, generic) each sampled recipient gets
+      responses: { "200": { description: OK } }
+  /recipients:
+    post:
+      tags: [Emails]
+      summary: Sample recipients of a campaign or audience for the preview
+      responses: { "200": { description: OK } }
+  /templates:
+    get: { tags: [Emails], summary: List email templates, responses: { "200": { description: OK } } }
+    post: { tags: [Emails], summary: Create a template, responses: { "201": { description: Created } } }
+  /templates/{id}:
+    parameters: [{ $ref: "#/components/parameters/Id" }]
+    put: { tags: [Emails], summary: Update a template, responses: { "200": { description: OK } } }
+    delete: { tags: [Emails], summary: Delete a template, responses: { "204": { description: Deleted } } }
+
+  /campaigns:
+    get: { tags: [Campaigns], summary: List campaigns (Kompass and past newsletters), responses: { "200": { description: OK } } }
+    post:
+      tags: [Campaigns]
+      summary: Create a campaign
+      requestBody:
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/CampaignInput"
+                - type: object
+                  properties: { templateId: { type: string } }
+      responses: { "201": { description: Created } }
+  /campaigns/{id}:
+    parameters: [{ $ref: "#/components/parameters/Id" }]
+    get: { tags: [Campaigns], summary: One campaign with plan rows, responses: { "200": { description: OK } } }
+    put:
+      tags: [Campaigns]
+      summary: Update a draft. Audience or offer changes re-plan; any change resets approvals.
+      requestBody: { content: { application/json: { schema: { $ref: "#/components/schemas/CampaignInput" } } } }
+      responses: { "200": { description: OK }, "409": { description: Already launched } }
+    delete: { tags: [Campaigns], summary: Delete, responses: { "204": { description: Deleted } } }
+  /campaigns/{id}/duplicate:
+    post: { tags: [Campaigns], summary: Copy as a new draft, parameters: [{ $ref: "#/components/parameters/Id" }], responses: { "201": { description: Created } } }
+  /campaigns/{id}/plan:
+    post:
+      tags: [Campaigns]
+      summary: Plan via the insights service (gates, control group, skip reasons, expected ΔCLV) plus workspace terms
+      parameters: [{ $ref: "#/components/parameters/Id" }]
+      responses: { "200": { description: Plan } }
+  /campaigns/{id}/variants:
+    get: { tags: [Campaigns], summary: Email versions across the planned recipients, parameters: [{ $ref: "#/components/parameters/Id" }], responses: { "200": { description: OK } } }
+  /campaigns/{id}/submit:
+    post: { tags: [Campaigns], summary: Send to review, parameters: [{ $ref: "#/components/parameters/Id" }], responses: { "200": { description: OK } } }
+  /campaigns/{id}/approve:
+    post:
+      tags: [Campaigns]
+      summary: Approve as a person and role (four-eyes rule from the terms)
+      parameters: [{ $ref: "#/components/parameters/Id" }]
+      requestBody:
+        content:
+          application/json:
+            schema: { type: object, required: [by, role], properties: { by: { type: string }, role: { type: string } } }
+      responses: { "200": { description: OK } }
+  /campaigns/{id}/launch:
+    post:
+      tags: [Campaigns]
+      summary: Re-check consent, then simulate delivery and outcomes against the control group
+      parameters: [{ $ref: "#/components/parameters/Id" }]
+      responses: { "200": { description: Campaign and results }, "409": { description: Missing approvals or no plan } }
+  /campaigns/{id}/finish:
+    post: { tags: [Campaigns], summary: Mark done, parameters: [{ $ref: "#/components/parameters/Id" }], responses: { "200": { description: OK } } }
+  /campaigns/{id}/learnings:
+    post: { tags: [Campaigns], summary: AI-written learnings from the results, parameters: [{ $ref: "#/components/parameters/Id" }], responses: { "200": { description: OK } } }
+
+  /automations:
+    get: { tags: [Automations], summary: List automations with a plain-language summary, responses: { "200": { description: OK } } }
+    post:
+      tags: [Automations]
+      summary: Create. The gate and approval nodes are added if missing.
+      requestBody: { content: { application/json: { schema: { $ref: "#/components/schemas/Automation" } } } }
+      responses: { "201": { description: Created } }
+  /automations/{id}:
+    parameters: [{ $ref: "#/components/parameters/Id" }]
+    get: { tags: [Automations], summary: One automation, responses: { "200": { description: OK } } }
+    put: { tags: [Automations], summary: Update (safety nodes are enforced), responses: { "200": { description: OK } } }
+    delete: { tags: [Automations], summary: Delete, responses: { "204": { description: Deleted } } }
+  /automations/nodes:
+    get: { tags: [Automations], summary: Node palette (incl. custom commands), triggers, condition fields, templates, responses: { "200": { description: OK } } }
+  /automations/run:
+    post:
+      tags: [Automations]
+      summary: Replay today's event stream through enabled automations; hits become proposals
+      requestBody:
+        content:
+          application/json:
+            schema: { type: object, properties: { reset: { type: boolean }, automationId: { type: string } } }
+      responses: { "200": { description: Run report } }
+  /automations/last-run:
+    get: { tags: [Automations], summary: Last run report, responses: { "200": { description: OK } } }
+
+  /proposals:
+    get:
+      tags: [Approvals]
+      summary: Messages and tasks waiting for approval (or decided)
+      parameters: [{ name: status, in: query, schema: { type: string, enum: [pending, approved, rejected, cancelled] } }]
+      responses: { "200": { description: OK } }
+    post:
+      tags: [Approvals]
+      summary: Queue a message (from a template) or a task for one customer, started from Customer 360
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [customerId, kind]
+              properties:
+                customerId: { type: string }
+                kind: { type: string, enum: [message, task] }
+                templateId: { type: string }
+                channel: { type: string }
+                team: { type: string }
+                text: { type: string }
+      responses: { "201": { description: Created }, "409": { description: No consent for the channel } }
+  /proposals/{id}/approve:
+    post: { tags: [Approvals], summary: Approve (counts against contact limits; nothing is sent), parameters: [{ $ref: "#/components/parameters/Id" }], responses: { "200": { description: OK } } }
+  /proposals/{id}/reject:
+    post: { tags: [Approvals], summary: Reject, parameters: [{ $ref: "#/components/parameters/Id" }], responses: { "200": { description: OK } } }
+  /proposals/bulk:
+    post:
+      tags: [Approvals]
+      summary: Approve or reject several, by ids or by source (automation / campaign)
+      requestBody:
+        content:
+          application/json:
+            schema: { type: object, required: [approve], properties: { ids: { type: array, items: { type: string } }, sourceId: { type: string }, approve: { type: boolean } } }
+      responses: { "200": { description: OK } }
+
+  /settings:
+    get: { tags: [Settings], summary: Terms, commands, custom blocks, voice, responses: { "200": { description: OK } } }
+  /settings/terms:
+    put: { tags: [Settings], summary: Update contact terms, responses: { "200": { description: OK } } }
+  /settings/commands:
+    post: { tags: [Settings], summary: Add a command (becomes a flow node and an assistant option), responses: { "201": { description: Created } } }
+  /settings/commands/{id}:
+    parameters: [{ $ref: "#/components/parameters/Id" }]
+    put: { tags: [Settings], summary: Update a command, responses: { "200": { description: OK } } }
+    delete: { tags: [Settings], summary: Delete (built-ins cannot be deleted), responses: { "204": { description: Deleted } } }
+  /settings/blocks:
+    post: { tags: [Settings], summary: Add a custom email block (Sie/Du text with placeholders, show-if rules), responses: { "201": { description: Created } } }
+  /settings/blocks/{id}:
+    parameters: [{ $ref: "#/components/parameters/Id" }]
+    put: { tags: [Settings], summary: Update a custom block, responses: { "200": { description: OK } } }
+    delete: { tags: [Settings], summary: Delete a custom block, responses: { "204": { description: Deleted } } }
+  /settings/voice:
+    put: { tags: [Settings], summary: Update brand voice, responses: { "200": { description: OK } } }
+  /workspace/reset:
+    post: { tags: [Settings], summary: Restore the seeded workspace, responses: { "200": { description: OK } } }
+
+  /assistant/conversations:
+    get: { tags: [Assistant], summary: Conversation list, responses: { "200": { description: OK } } }
+    post: { tags: [Assistant], summary: New conversation, responses: { "201": { description: Created } } }
+  /assistant/conversations/{id}:
+    parameters: [{ $ref: "#/components/parameters/Id" }]
+    get: { tags: [Assistant], summary: Conversation with messages and tool calls, responses: { "200": { description: OK } } }
+    delete: { tags: [Assistant], summary: Delete, responses: { "204": { description: Deleted } } }
+  /assistant/conversations/{id}/messages:
+    post:
+      tags: [Assistant]
+      summary: Send a message; answers as server-sent events (user, step start/end, message, error) with keep-alive pings
+      parameters: [{ $ref: "#/components/parameters/Id" }]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [text]
+              properties:
+                text: { type: string }
+                context: { type: object, properties: { view: { type: string }, customerId: { type: string }, campaignId: { type: string }, automationId: { type: string } } }
+      responses: { "200": { description: text/event-stream } }
+  /assistant/conversations/{id}/proposals/{callId}/{action}:
+    post:
+      tags: [Assistant]
+      summary: Apply or discard a proposal card from a tool call
+      parameters:
+        - $ref: "#/components/parameters/Id"
+        - { name: callId, in: path, required: true, schema: { type: string } }
+        - { name: action, in: path, required: true, schema: { type: string, enum: [apply, discard] } }
+      responses: { "200": { description: Updated proposal }, "409": { description: Already decided } }
+
+components:
+  parameters:
+    Id: { name: id, in: path, required: true, schema: { type: string } }
+  schemas:
+    Audience:
+      description: Audience filter of the insights service (segments, pains, holds/lacks, reachable_via, guarantee_ends_within_days, …).
+      type: object
+      additionalProperties: true
+    Block:
+      type: object
+      required: [id, type]
+      properties:
+        id: { type: string }
+        type: { type: string, description: 'Built-in type or "custom:<id>"' }
+        props: { type: object }
+        showIf:
+          type: array
+          items:
+            type: object
+            properties:
+              field: { type: string }
+              op: { type: string, enum: [is, is_not, gt, lt, contains, not_contains, exists, not_exists] }
+              value: {}
+    EmailDoc:
+      type: object
+      required: [subject, blocks]
+      properties:
+        subject: { type: object, properties: { du: { type: string }, sie: { type: string } } }
+        blocks: { type: array, items: { $ref: "#/components/schemas/Block" } }
+    CampaignInput:
+      type: object
+      properties:
+        name: { type: string }
+        goal: { type: string }
+        audience: { $ref: "#/components/schemas/Audience" }
+        audienceLabel: { type: string }
+        offerMode: { type: string, enum: [engine, pinned] }
+        offerIds: { type: array, items: { type: string } }
+        channels: { type: array, items: { type: string } }
+        email: { $ref: "#/components/schemas/EmailDoc" }
+        followUp: { $ref: "#/components/schemas/Flow" }
+    Flow:
+      type: object
+      properties:
+        nodes:
+          type: array
+          items:
+            type: object
+            properties:
+              id: { type: string }
+              kind: { type: string, description: "trigger, gate, condition, wait, split, ai_offer, ai_write, ai_classify, send, task, voucher, survey, notify, approval, cancel_queued, stop, command" }
+              position: { type: object, properties: { x: { type: number }, y: { type: number } } }
+              config: { type: object }
+              locked: { type: boolean }
+        edges:
+          type: array
+          items: { type: object, properties: { id: { type: string }, source: { type: string }, target: { type: string }, label: { type: string } } }
+    Automation:
+      allOf:
+        - $ref: "#/components/schemas/Flow"
+        - type: object
+          properties:
+            name: { type: string }
+            enabled: { type: boolean }

@@ -1,0 +1,1630 @@
+{
+ "hook_1": {
+  "key": "e57b6fba3b306274",
+  "file": "hook_1.wav",
+  "seconds": 5.69,
+  "seed": 11,
+  "text": "17:22. Jan's car won't charge. Again.",
+  "heard": "522 p.m. Yance car won't charge again.",
+  "match": 0.6,
+  "words": [
+   {
+    "w": "522",
+    "t": 0.38,
+    "end": 1.48
+   },
+   {
+    "w": "p",
+    "t": 1.48,
+    "end": 1.88
+   },
+   {
+    "w": ".m.",
+    "t": 1.88,
+    "end": 2.28
+   },
+   {
+    "w": "Yance",
+    "t": 2.58,
+    "end": 3.04
+   },
+   {
+    "w": "car",
+    "t": 3.04,
+    "end": 3.54
+   },
+   {
+    "w": "won't",
+    "t": 3.54,
+    "end": 3.98
+   },
+   {
+    "w": "charge",
+    "t": 3.98,
+    "end": 5.26
+   },
+   {
+    "w": "again.",
+    "t": 5.26,
+    "end": 5.6
+   }
+  ]
+ },
+ "hook_2": {
+  "key": "ca539ef1554e1300",
+  "file": "hook_2.wav",
+  "seconds": 5.72,
+  "seed": 11,
+  "text": "The next morning, his inbox lights up: “Switch your tariff and save!”",
+  "heard": "The next morning, his inbox lights up. Switch your tariff and save.",
+  "match": 1.0,
+  "words": [
+   {
+    "w": "The",
+    "t": 0.14,
+    "end": 0.44
+   },
+   {
+    "w": "next",
+    "t": 0.44,
+    "end": 0.96
+   },
+   {
+    "w": "morning,",
+    "t": 0.96,
+    "end": 1.36
+   },
+   {
+    "w": "his",
+    "t": 1.6,
+    "end": 2.04
+   },
+   {
+    "w": "inbox",
+    "t": 2.04,
+    "end": 2.54
+   },
+   {
+    "w": "lights",
+    "t": 2.54,
+    "end": 2.88
+   },
+   {
+    "w": "up.",
+    "t": 2.88,
+    "end": 3.44
+   },
+   {
+    "w": "Switch",
+    "t": 3.8,
+    "end": 4.06
+   },
+   {
+    "w": "your",
+    "t": 4.06,
+    "end": 4.42
+   },
+   {
+    "w": "tariff",
+    "t": 4.42,
+    "end": 5.06
+   },
+   {
+    "w": "and",
+    "t": 5.06,
+    "end": 5.42
+   },
+   {
+    "w": "save.",
+    "t": 5.42,
+    "end": 5.6
+   }
+  ]
+ },
+ "hook_3": {
+  "key": "2511451bfbea8db6",
+  "file": "hook_3.wav",
+  "seconds": 3.5,
+  "seed": 111,
+  "text": "Wrong message. Wrong moment.",
+  "heard": "Wrong message, wrong moment.",
+  "match": 1.0,
+  "words": [
+   {
+    "w": "Wrong",
+    "t": 0.32,
+    "end": 0.82
+   },
+   {
+    "w": "message,",
+    "t": 0.82,
+    "end": 1.48
+   },
+   {
+    "w": "wrong",
+    "t": 1.74,
+    "end": 2.28
+   },
+   {
+    "w": "moment.",
+    "t": 2.28,
+    "end": 2.6
+   }
+  ]
+ },
+ "problem_1": {
+  "key": "32b5f92d46c8f924",
+  "file": "problem_1.wav",
+  "seconds": 9.72,
+  "seed": 11,
+  "text": "MAINGAU knows a lot about its customers: contracts, charging, tickets, consents. 647 signals on a single day.",
+  "heard": "My Gao knows a lot about its customers. Contracts, charging, tickets, consents, 647 signals on a single day.",
+  "match": 0.68,
+  "words": [
+   {
+    "w": "My",
+    "t": 0.26,
+    "end": 0.5
+   },
+   {
+    "w": "Gao",
+    "t": 0.5,
+    "end": 1.1
+   },
+   {
+    "w": "knows",
+    "t": 1.1,
+    "end": 1.2
+   },
+   {
+    "w": "a",
+    "t": 1.2,
+    "end": 1.44
+   },
+   {
+    "w": "lot",
+    "t": 1.44,
+    "end": 1.76
+   },
+   {
+    "w": "about",
+    "t": 1.76,
+    "end": 1.9
+   },
+   {
+    "w": "its",
+    "t": 1.9,
+    "end": 2.22
+   },
+   {
+    "w": "customers.",
+    "t": 2.22,
+    "end": 2.8
+   },
+   {
+    "w": "Contracts,",
+    "t": 3.24,
+    "end": 3.76
+   },
+   {
+    "w": "charging,",
+    "t": 4.18,
+    "end": 4.5
+   },
+   {
+    "w": "tickets,",
+    "t": 4.82,
+    "end": 5.36
+   },
+   {
+    "w": "consents,",
+    "t": 5.58,
+    "end": 6.2
+   },
+   {
+    "w": "647",
+    "t": 6.62,
+    "end": 8.08
+   },
+   {
+    "w": "signals",
+    "t": 8.08,
+    "end": 8.54
+   },
+   {
+    "w": "on",
+    "t": 8.54,
+    "end": 8.64
+   },
+   {
+    "w": "a",
+    "t": 8.64,
+    "end": 8.94
+   },
+   {
+    "w": "single",
+    "t": 8.94,
+    "end": 9.42
+   },
+   {
+    "w": "day.",
+    "t": 9.42,
+    "end": 9.6
+   }
+  ]
+ },
+ "problem_2": {
+  "key": "9b1681c00ed4e289",
+  "file": "problem_2.wav",
+  "seconds": 9.63,
+  "seed": 211,
+  "text": "But the newsletter still goes to everyone, with the same text. 0.6 % convert, and nobody can say what worked.",
+  "heard": "But the newsletter still goes to everyone with the same text, 0.6% convert. And nobody can say what worked.",
+  "match": 0.82,
+  "words": [
+   {
+    "w": "But",
+    "t": 0.1,
+    "end": 0.24
+   },
+   {
+    "w": "the",
+    "t": 0.24,
+    "end": 0.44
+   },
+   {
+    "w": "newsletter",
+    "t": 0.44,
+    "end": 1
+   },
+   {
+    "w": "still",
+    "t": 1,
+    "end": 1.26
+   },
+   {
+    "w": "goes",
+    "t": 1.26,
+    "end": 1.48
+   },
+   {
+    "w": "to",
+    "t": 1.48,
+    "end": 1.92
+   },
+   {
+    "w": "everyone",
+    "t": 1.92,
+    "end": 2.34
+   },
+   {
+    "w": "with",
+    "t": 2.34,
+    "end": 2.48
+   },
+   {
+    "w": "the",
+    "t": 2.48,
+    "end": 2.74
+   },
+   {
+    "w": "same",
+    "t": 2.74,
+    "end": 3.18
+   },
+   {
+    "w": "text,",
+    "t": 3.18,
+    "end": 3.54
+   },
+   {
+    "w": "0",
+    "t": 3.9,
+    "end": 4.26
+   },
+   {
+    "w": ".6",
+    "t": 4.26,
+    "end": 5.06
+   },
+   {
+    "w": "%",
+    "t": 5.06,
+    "end": 5.08
+   },
+   {
+    "w": "convert.",
+    "t": 5.56,
+    "end": 6.08
+   },
+   {
+    "w": "And",
+    "t": 6.4,
+    "end": 7.28
+   },
+   {
+    "w": "nobody",
+    "t": 7.28,
+    "end": 7.84
+   },
+   {
+    "w": "can",
+    "t": 7.84,
+    "end": 8.34
+   },
+   {
+    "w": "say",
+    "t": 8.34,
+    "end": 8.76
+   },
+   {
+    "w": "what",
+    "t": 8.76,
+    "end": 9.24
+   },
+   {
+    "w": "worked.",
+    "t": 9.24,
+    "end": 9.52
+   }
+  ]
+ },
+ "problem_3": {
+  "key": "d29b71d1d0989094",
+  "file": "problem_3.wav",
+  "seconds": 6.79,
+  "seed": 211,
+  "text": "What if every customer got the next right step? At the right moment, on a channel they said yes to.",
+  "heard": "What if every customer got the next right step? At the right moment, on a channel they said yes to.",
+  "match": 1.0,
+  "words": [
+   {
+    "w": "What",
+    "t": 0.26,
+    "end": 0.38
+   },
+   {
+    "w": "if",
+    "t": 0.38,
+    "end": 0.74
+   },
+   {
+    "w": "every",
+    "t": 0.74,
+    "end": 1.12
+   },
+   {
+    "w": "customer",
+    "t": 1.12,
+    "end": 1.54
+   },
+   {
+    "w": "got",
+    "t": 1.54,
+    "end": 1.72
+   },
+   {
+    "w": "the",
+    "t": 1.72,
+    "end": 1.94
+   },
+   {
+    "w": "next",
+    "t": 1.94,
+    "end": 2.22
+   },
+   {
+    "w": "right",
+    "t": 2.22,
+    "end": 2.56
+   },
+   {
+    "w": "step?",
+    "t": 2.56,
+    "end": 3.2
+   },
+   {
+    "w": "At",
+    "t": 3.38,
+    "end": 3.5
+   },
+   {
+    "w": "the",
+    "t": 3.5,
+    "end": 3.7
+   },
+   {
+    "w": "right",
+    "t": 3.7,
+    "end": 4.16
+   },
+   {
+    "w": "moment,",
+    "t": 4.16,
+    "end": 4.54
+   },
+   {
+    "w": "on",
+    "t": 4.72,
+    "end": 4.84
+   },
+   {
+    "w": "a",
+    "t": 4.84,
+    "end": 5.22
+   },
+   {
+    "w": "channel",
+    "t": 5.22,
+    "end": 5.44
+   },
+   {
+    "w": "they",
+    "t": 5.44,
+    "end": 5.82
+   },
+   {
+    "w": "said",
+    "t": 5.82,
+    "end": 6.14
+   },
+   {
+    "w": "yes",
+    "t": 6.14,
+    "end": 6.46
+   },
+   {
+    "w": "to.",
+    "t": 6.46,
+    "end": 6.64
+   }
+  ]
+ },
+ "reveal": {
+  "key": "21be9126fdb5b44a",
+  "file": "reveal.wav",
+  "seconds": 8.12,
+  "seed": 11,
+  "text": "Meet Kompass. It turns every customer signal into the next right step, and a human approves every message.",
+  "heard": "Meet Compass. It turns every customer signal into the next right step. And a human approves every message.",
+  "match": 0.94,
+  "words": [
+   {
+    "w": "Meet",
+    "t": 0.24,
+    "end": 0.48
+   },
+   {
+    "w": "Compass.",
+    "t": 0.48,
+    "end": 1.06
+   },
+   {
+    "w": "It",
+    "t": 1.28,
+    "end": 1.54
+   },
+   {
+    "w": "turns",
+    "t": 1.54,
+    "end": 1.92
+   },
+   {
+    "w": "every",
+    "t": 1.92,
+    "end": 2.32
+   },
+   {
+    "w": "customer",
+    "t": 2.32,
+    "end": 2.96
+   },
+   {
+    "w": "signal",
+    "t": 2.96,
+    "end": 3.28
+   },
+   {
+    "w": "into",
+    "t": 3.28,
+    "end": 3.46
+   },
+   {
+    "w": "the",
+    "t": 3.46,
+    "end": 3.64
+   },
+   {
+    "w": "next",
+    "t": 3.64,
+    "end": 3.88
+   },
+   {
+    "w": "right",
+    "t": 3.88,
+    "end": 4.22
+   },
+   {
+    "w": "step.",
+    "t": 4.22,
+    "end": 4.7
+   },
+   {
+    "w": "And",
+    "t": 5.12,
+    "end": 5.48
+   },
+   {
+    "w": "a",
+    "t": 5.48,
+    "end": 5.94
+   },
+   {
+    "w": "human",
+    "t": 5.94,
+    "end": 6.48
+   },
+   {
+    "w": "approves",
+    "t": 6.48,
+    "end": 7.14
+   },
+   {
+    "w": "every",
+    "t": 7.14,
+    "end": 7.66
+   },
+   {
+    "w": "message.",
+    "t": 7.66,
+    "end": 8
+   }
+  ]
+ },
+ "data": {
+  "key": "a152a1b4dc18f2dd",
+  "file": "data.wav",
+  "seconds": 12.81,
+  "seed": 211,
+  "text": "Kompass reads every event from our insights service the moment it happens. Every event re-ranks that customer: churn risk, the best offer and what it's worth, and the best time to reach them.",
+  "heard": "Compost reads every event from our Insights service the moment it happens. Every event re-ranks that customer. Turn risk, the best offer, and what it's worth. And the best time to reach them.",
+  "match": 0.94,
+  "words": [
+   {
+    "w": "Compost",
+    "t": 0.2,
+    "end": 0.64
+   },
+   {
+    "w": "reads",
+    "t": 0.64,
+    "end": 1.12
+   },
+   {
+    "w": "every",
+    "t": 1.12,
+    "end": 1.64
+   },
+   {
+    "w": "event",
+    "t": 1.64,
+    "end": 1.88
+   },
+   {
+    "w": "from",
+    "t": 1.88,
+    "end": 2.04
+   },
+   {
+    "w": "our",
+    "t": 2.04,
+    "end": 2.28
+   },
+   {
+    "w": "Insights",
+    "t": 2.28,
+    "end": 2.82
+   },
+   {
+    "w": "service",
+    "t": 2.82,
+    "end": 3.16
+   },
+   {
+    "w": "the",
+    "t": 3.16,
+    "end": 3.54
+   },
+   {
+    "w": "moment",
+    "t": 3.54,
+    "end": 3.8
+   },
+   {
+    "w": "it",
+    "t": 3.8,
+    "end": 4.22
+   },
+   {
+    "w": "happens.",
+    "t": 4.22,
+    "end": 4.84
+   },
+   {
+    "w": "Every",
+    "t": 5.2,
+    "end": 5.64
+   },
+   {
+    "w": "event",
+    "t": 5.64,
+    "end": 5.96
+   },
+   {
+    "w": "re",
+    "t": 5.96,
+    "end": 6.14
+   },
+   {
+    "w": "-ranks",
+    "t": 6.14,
+    "end": 6.56
+   },
+   {
+    "w": "that",
+    "t": 6.56,
+    "end": 7.02
+   },
+   {
+    "w": "customer.",
+    "t": 7.02,
+    "end": 7.52
+   },
+   {
+    "w": "Turn",
+    "t": 7.92,
+    "end": 8.3
+   },
+   {
+    "w": "risk,",
+    "t": 8.3,
+    "end": 8.66
+   },
+   {
+    "w": "the",
+    "t": 8.74,
+    "end": 8.98
+   },
+   {
+    "w": "best",
+    "t": 8.98,
+    "end": 9.38
+   },
+   {
+    "w": "offer,",
+    "t": 9.38,
+    "end": 9.74
+   },
+   {
+    "w": "and",
+    "t": 9.94,
+    "end": 10.18
+   },
+   {
+    "w": "what",
+    "t": 10.18,
+    "end": 10.32
+   },
+   {
+    "w": "it's",
+    "t": 10.32,
+    "end": 10.6
+   },
+   {
+    "w": "worth.",
+    "t": 10.6,
+    "end": 11.02
+   },
+   {
+    "w": "And",
+    "t": 11.16,
+    "end": 11.28
+   },
+   {
+    "w": "the",
+    "t": 11.28,
+    "end": 11.52
+   },
+   {
+    "w": "best",
+    "t": 11.52,
+    "end": 11.84
+   },
+   {
+    "w": "time",
+    "t": 11.84,
+    "end": 12.02
+   },
+   {
+    "w": "to",
+    "t": 12.02,
+    "end": 12.18
+   },
+   {
+    "w": "reach",
+    "t": 12.18,
+    "end": 12.5
+   },
+   {
+    "w": "them.",
+    "t": 12.5,
+    "end": 12.64
+   }
+  ]
+ },
+ "home": {
+  "key": "f2499f54e3963944",
+  "file": "home.wav",
+  "seconds": 11.09,
+  "seed": 211,
+  "text": "Clara from CRM starts her day here. Every draft shows its channel, its offer, what it's worth, and why. Nothing goes out without her.",
+  "heard": "Clara from CRM starts her day here. Every draft shows its channel, its offer, what it's worth, and why. Nothing goes out without her.",
+  "match": 1.0,
+  "words": [
+   {
+    "w": "Clara",
+    "t": 0.24,
+    "end": 0.88
+   },
+   {
+    "w": "from",
+    "t": 0.88,
+    "end": 1.24
+   },
+   {
+    "w": "CRM",
+    "t": 1.24,
+    "end": 2.1
+   },
+   {
+    "w": "starts",
+    "t": 2.1,
+    "end": 2.42
+   },
+   {
+    "w": "her",
+    "t": 2.42,
+    "end": 2.72
+   },
+   {
+    "w": "day",
+    "t": 2.72,
+    "end": 3.2
+   },
+   {
+    "w": "here.",
+    "t": 3.2,
+    "end": 3.7
+   },
+   {
+    "w": "Every",
+    "t": 4.14,
+    "end": 4.36
+   },
+   {
+    "w": "draft",
+    "t": 4.36,
+    "end": 4.84
+   },
+   {
+    "w": "shows",
+    "t": 4.84,
+    "end": 5.12
+   },
+   {
+    "w": "its",
+    "t": 5.12,
+    "end": 5.6
+   },
+   {
+    "w": "channel,",
+    "t": 5.6,
+    "end": 5.96
+   },
+   {
+    "w": "its",
+    "t": 6.14,
+    "end": 6.56
+   },
+   {
+    "w": "offer,",
+    "t": 6.56,
+    "end": 6.86
+   },
+   {
+    "w": "what",
+    "t": 7.06,
+    "end": 7.22
+   },
+   {
+    "w": "it's",
+    "t": 7.22,
+    "end": 7.6
+   },
+   {
+    "w": "worth,",
+    "t": 7.6,
+    "end": 7.96
+   },
+   {
+    "w": "and",
+    "t": 8.34,
+    "end": 8.88
+   },
+   {
+    "w": "why.",
+    "t": 8.88,
+    "end": 9.28
+   },
+   {
+    "w": "Nothing",
+    "t": 9.64,
+    "end": 9.82
+   },
+   {
+    "w": "goes",
+    "t": 9.82,
+    "end": 10.12
+   },
+   {
+    "w": "out",
+    "t": 10.12,
+    "end": 10.36
+   },
+   {
+    "w": "without",
+    "t": 10.36,
+    "end": 10.84
+   },
+   {
+    "w": "her.",
+    "t": 10.84,
+    "end": 11.04
+   }
+  ]
+ },
+ "service_1": {
+  "key": "6d41976b3bec4e67",
+  "file": "service_1.wav",
+  "seconds": 2.27,
+  "seed": 211,
+  "text": "Service comes before sales.",
+  "heard": "Service comes before sales.",
+  "match": 1.0,
+  "words": [
+   {
+    "w": "Service",
+    "t": 0.58,
+    "end": 0.9
+   },
+   {
+    "w": "comes",
+    "t": 0.9,
+    "end": 1.26
+   },
+   {
+    "w": "before",
+    "t": 1.26,
+    "end": 1.74
+   },
+   {
+    "w": "sales.",
+    "t": 1.74,
+    "end": 2
+   }
+  ]
+ },
+ "service_2": {
+  "key": "a80e11ab94737f27",
+  "file": "service_2.wav",
+  "seconds": 10.33,
+  "seed": 211,
+  "text": "Remember Jan? In service mode, Mehmet sees the failed charge first. Kompass puts the fix on top, and holds back every offer while Jan is upset.",
+  "heard": "Remember Yan. In service mode, Mamet sees the failed charge first. Compass puts the fix on top and holds back every offer while Yan is upset.",
+  "match": 0.92,
+  "words": [
+   {
+    "w": "Remember",
+    "t": 0.36,
+    "end": 0.74
+   },
+   {
+    "w": "Yan.",
+    "t": 0.74,
+    "end": 1.2
+   },
+   {
+    "w": "In",
+    "t": 1.64,
+    "end": 1.9
+   },
+   {
+    "w": "service",
+    "t": 1.9,
+    "end": 2.28
+   },
+   {
+    "w": "mode,",
+    "t": 2.28,
+    "end": 2.62
+   },
+   {
+    "w": "Mamet",
+    "t": 2.72,
+    "end": 3.1
+   },
+   {
+    "w": "sees",
+    "t": 3.1,
+    "end": 3.34
+   },
+   {
+    "w": "the",
+    "t": 3.34,
+    "end": 3.64
+   },
+   {
+    "w": "failed",
+    "t": 3.64,
+    "end": 3.92
+   },
+   {
+    "w": "charge",
+    "t": 3.92,
+    "end": 4.46
+   },
+   {
+    "w": "first.",
+    "t": 4.46,
+    "end": 4.92
+   },
+   {
+    "w": "Compass",
+    "t": 5.38,
+    "end": 5.72
+   },
+   {
+    "w": "puts",
+    "t": 5.72,
+    "end": 5.96
+   },
+   {
+    "w": "the",
+    "t": 5.96,
+    "end": 6.14
+   },
+   {
+    "w": "fix",
+    "t": 6.14,
+    "end": 6.42
+   },
+   {
+    "w": "on",
+    "t": 6.42,
+    "end": 6.68
+   },
+   {
+    "w": "top",
+    "t": 6.68,
+    "end": 6.98
+   },
+   {
+    "w": "and",
+    "t": 6.98,
+    "end": 7.22
+   },
+   {
+    "w": "holds",
+    "t": 7.22,
+    "end": 7.54
+   },
+   {
+    "w": "back",
+    "t": 7.54,
+    "end": 7.96
+   },
+   {
+    "w": "every",
+    "t": 7.96,
+    "end": 8.6
+   },
+   {
+    "w": "offer",
+    "t": 8.6,
+    "end": 9.12
+   },
+   {
+    "w": "while",
+    "t": 9.12,
+    "end": 9.3
+   },
+   {
+    "w": "Yan",
+    "t": 9.3,
+    "end": 9.62
+   },
+   {
+    "w": "is",
+    "t": 9.62,
+    "end": 9.84
+   },
+   {
+    "w": "upset.",
+    "t": 9.84,
+    "end": 10.28
+   }
+  ]
+ },
+ "ai_1": {
+  "key": "6d61c57c58cea06c",
+  "file": "ai_1.wav",
+  "seconds": 3.28,
+  "seed": 111,
+  "text": "And you can use AI to do everything.",
+  "heard": "and you can use AI to do everything.",
+  "match": 0.78,
+  "words": [
+   {
+    "w": "and",
+    "t": 0.32,
+    "end": 0.54
+   },
+   {
+    "w": "you",
+    "t": 0.54,
+    "end": 0.7
+   },
+   {
+    "w": "can",
+    "t": 0.7,
+    "end": 0.96
+   },
+   {
+    "w": "use",
+    "t": 0.96,
+    "end": 1.4
+   },
+   {
+    "w": "AI",
+    "t": 1.4,
+    "end": 2.16
+   },
+   {
+    "w": "to",
+    "t": 2.16,
+    "end": 2.36
+   },
+   {
+    "w": "do",
+    "t": 2.36,
+    "end": 2.82
+   },
+   {
+    "w": "everything.",
+    "t": 2.82,
+    "end": 3.16
+   }
+  ]
+ },
+ "ai_2": {
+  "key": "086c2c4b3a6e6d4b",
+  "file": "ai_2.wav",
+  "seconds": 9.74,
+  "seed": 111,
+  "text": "Just ask. Kompass opens a campaign, picks the audience and the offer, finds each customer's best time, and writes every message, in Du and in Sie.",
+  "heard": "Just ask, Compass opens a campaign, picks the audience and the offer, finds each customer's best time and writes every message in due and in Z.",
+  "match": 0.88,
+  "words": [
+   {
+    "w": "Just",
+    "t": 0.24,
+    "end": 0.46
+   },
+   {
+    "w": "ask,",
+    "t": 0.46,
+    "end": 1.38
+   },
+   {
+    "w": "Compass",
+    "t": 1.38,
+    "end": 1.62
+   },
+   {
+    "w": "opens",
+    "t": 1.62,
+    "end": 1.92
+   },
+   {
+    "w": "a",
+    "t": 1.92,
+    "end": 2.22
+   },
+   {
+    "w": "campaign,",
+    "t": 2.22,
+    "end": 2.7
+   },
+   {
+    "w": "picks",
+    "t": 2.82,
+    "end": 3.02
+   },
+   {
+    "w": "the",
+    "t": 3.02,
+    "end": 3.44
+   },
+   {
+    "w": "audience",
+    "t": 3.44,
+    "end": 3.78
+   },
+   {
+    "w": "and",
+    "t": 3.78,
+    "end": 3.94
+   },
+   {
+    "w": "the",
+    "t": 3.94,
+    "end": 4.2
+   },
+   {
+    "w": "offer,",
+    "t": 4.2,
+    "end": 4.58
+   },
+   {
+    "w": "finds",
+    "t": 4.82,
+    "end": 5.16
+   },
+   {
+    "w": "each",
+    "t": 5.16,
+    "end": 5.54
+   },
+   {
+    "w": "customer's",
+    "t": 5.54,
+    "end": 5.76
+   },
+   {
+    "w": "best",
+    "t": 6.04,
+    "end": 6.38
+   },
+   {
+    "w": "time",
+    "t": 6.38,
+    "end": 6.68
+   },
+   {
+    "w": "and",
+    "t": 6.68,
+    "end": 6.92
+   },
+   {
+    "w": "writes",
+    "t": 6.92,
+    "end": 7.3
+   },
+   {
+    "w": "every",
+    "t": 7.3,
+    "end": 7.88
+   },
+   {
+    "w": "message",
+    "t": 7.88,
+    "end": 8.32
+   },
+   {
+    "w": "in",
+    "t": 8.32,
+    "end": 8.54
+   },
+   {
+    "w": "due",
+    "t": 8.54,
+    "end": 9.04
+   },
+   {
+    "w": "and",
+    "t": 9.04,
+    "end": 9.18
+   },
+   {
+    "w": "in",
+    "t": 9.18,
+    "end": 9.38
+   },
+   {
+    "w": "Z.",
+    "t": 9.38,
+    "end": 9.6
+   }
+  ]
+ },
+ "ai_3": {
+  "key": "0fd5c36a5c3ddd46",
+  "file": "ai_3.wav",
+  "seconds": 6.5,
+  "seed": 211,
+  "text": "Charts. Customer lists. Campaigns. It works right on screen, where you can watch it.",
+  "heard": "Charts, customer lists, campaigns, it works right on screen where you can watch it.",
+  "match": 1.0,
+  "words": [
+   {
+    "w": "Charts,",
+    "t": 0.98,
+    "end": 2.04
+   },
+   {
+    "w": "customer",
+    "t": 2.04,
+    "end": 2.32
+   },
+   {
+    "w": "lists,",
+    "t": 2.32,
+    "end": 2.88
+   },
+   {
+    "w": "campaigns,",
+    "t": 3.3,
+    "end": 3.96
+   },
+   {
+    "w": "it",
+    "t": 4.1,
+    "end": 4.28
+   },
+   {
+    "w": "works",
+    "t": 4.28,
+    "end": 4.64
+   },
+   {
+    "w": "right",
+    "t": 4.64,
+    "end": 4.84
+   },
+   {
+    "w": "on",
+    "t": 4.84,
+    "end": 5.08
+   },
+   {
+    "w": "screen",
+    "t": 5.08,
+    "end": 5.42
+   },
+   {
+    "w": "where",
+    "t": 5.42,
+    "end": 5.56
+   },
+   {
+    "w": "you",
+    "t": 5.56,
+    "end": 5.7
+   },
+   {
+    "w": "can",
+    "t": 5.7,
+    "end": 5.98
+   },
+   {
+    "w": "watch",
+    "t": 5.98,
+    "end": 6.18
+   },
+   {
+    "w": "it.",
+    "t": 6.18,
+    "end": 6.24
+   }
+  ]
+ },
+ "guard_1": {
+  "key": "62648b7f689ede68",
+  "file": "guard_1.wav",
+  "seconds": 1.72,
+  "seed": 11,
+  "text": "But it can't send.",
+  "heard": "But it can't send.",
+  "match": 1.0,
+  "words": [
+   {
+    "w": "But",
+    "t": 0.38,
+    "end": 0.5
+   },
+   {
+    "w": "it",
+    "t": 0.5,
+    "end": 0.72
+   },
+   {
+    "w": "can't",
+    "t": 0.72,
+    "end": 1.18
+   },
+   {
+    "w": "send.",
+    "t": 1.18,
+    "end": 2
+   }
+  ]
+ },
+ "guard_2": {
+  "key": "dac60206c52c5c47",
+  "file": "guard_2.wav",
+  "seconds": 8.58,
+  "seed": 211,
+  "text": "Consent, open complaints and contact limits are checked for every single customer. Clara approves, and only then does anything go out.",
+  "heard": "Conson, open complaints, and contact limits are checked for every single customer. Clara approves and only then does anything go out.",
+  "match": 1.0,
+  "words": [
+   {
+    "w": "Conson,",
+    "t": 0.26,
+    "end": 0.72
+   },
+   {
+    "w": "open",
+    "t": 0.9,
+    "end": 1.26
+   },
+   {
+    "w": "complaints,",
+    "t": 1.26,
+    "end": 1.76
+   },
+   {
+    "w": "and",
+    "t": 1.88,
+    "end": 2.2
+   },
+   {
+    "w": "contact",
+    "t": 2.2,
+    "end": 2.66
+   },
+   {
+    "w": "limits",
+    "t": 2.66,
+    "end": 3.02
+   },
+   {
+    "w": "are",
+    "t": 3.02,
+    "end": 3.28
+   },
+   {
+    "w": "checked",
+    "t": 3.28,
+    "end": 3.6
+   },
+   {
+    "w": "for",
+    "t": 3.6,
+    "end": 3.92
+   },
+   {
+    "w": "every",
+    "t": 3.92,
+    "end": 4.38
+   },
+   {
+    "w": "single",
+    "t": 4.38,
+    "end": 4.94
+   },
+   {
+    "w": "customer.",
+    "t": 4.94,
+    "end": 5.52
+   },
+   {
+    "w": "Clara",
+    "t": 5.86,
+    "end": 6.3
+   },
+   {
+    "w": "approves",
+    "t": 6.3,
+    "end": 6.7
+   },
+   {
+    "w": "and",
+    "t": 6.7,
+    "end": 6.94
+   },
+   {
+    "w": "only",
+    "t": 6.94,
+    "end": 7.22
+   },
+   {
+    "w": "then",
+    "t": 7.22,
+    "end": 7.4
+   },
+   {
+    "w": "does",
+    "t": 7.4,
+    "end": 7.78
+   },
+   {
+    "w": "anything",
+    "t": 7.78,
+    "end": 8.14
+   },
+   {
+    "w": "go",
+    "t": 8.14,
+    "end": 8.38
+   },
+   {
+    "w": "out.",
+    "t": 8.38,
+    "end": 8.48
+   }
+  ]
+ },
+ "proof": {
+  "key": "0eb63742b91baba3",
+  "file": "proof.wav",
+  "seconds": 5.14,
+  "seed": 11,
+  "text": "Every campaign keeps a control group, so you can prove what worked.",
+  "heard": "Every campaign keeps a control group so you can prove what worked.",
+  "match": 1.0,
+  "words": [
+   {
+    "w": "Every",
+    "t": 0.68,
+    "end": 1.06
+   },
+   {
+    "w": "campaign",
+    "t": 1.06,
+    "end": 1.58
+   },
+   {
+    "w": "keeps",
+    "t": 1.58,
+    "end": 1.76
+   },
+   {
+    "w": "a",
+    "t": 1.76,
+    "end": 2.02
+   },
+   {
+    "w": "control",
+    "t": 2.02,
+    "end": 2.48
+   },
+   {
+    "w": "group",
+    "t": 2.48,
+    "end": 3.02
+   },
+   {
+    "w": "so",
+    "t": 3.02,
+    "end": 3.28
+   },
+   {
+    "w": "you",
+    "t": 3.28,
+    "end": 3.46
+   },
+   {
+    "w": "can",
+    "t": 3.46,
+    "end": 3.8
+   },
+   {
+    "w": "prove",
+    "t": 3.8,
+    "end": 4.16
+   },
+   {
+    "w": "what",
+    "t": 4.16,
+    "end": 4.64
+   },
+   {
+    "w": "worked.",
+    "t": 4.64,
+    "end": 5
+   }
+  ]
+ },
+ "close": {
+  "key": "5ad8e376856e2d7c",
+  "file": "close.wav",
+  "seconds": 5.08,
+  "seed": 11,
+  "text": "Kompass. Live data in. The next right step out. Humans in control.",
+  "heard": "Compass. Live data in. The next right step out. Humans in control.",
+  "match": 0.92,
+  "words": [
+   {
+    "w": "Compass.",
+    "t": 0.36,
+    "end": 0.9
+   },
+   {
+    "w": "Live",
+    "t": 1.28,
+    "end": 1.48
+   },
+   {
+    "w": "data",
+    "t": 1.48,
+    "end": 1.82
+   },
+   {
+    "w": "in.",
+    "t": 1.82,
+    "end": 2.16
+   },
+   {
+    "w": "The",
+    "t": 2.3,
+    "end": 2.54
+   },
+   {
+    "w": "next",
+    "t": 2.54,
+    "end": 2.8
+   },
+   {
+    "w": "right",
+    "t": 2.8,
+    "end": 3.12
+   },
+   {
+    "w": "step",
+    "t": 3.12,
+    "end": 3.4
+   },
+   {
+    "w": "out.",
+    "t": 3.4,
+    "end": 3.7
+   },
+   {
+    "w": "Humans",
+    "t": 4,
+    "end": 4.32
+   },
+   {
+    "w": "in",
+    "t": 4.32,
+    "end": 4.7
+   },
+   {
+    "w": "control.",
+    "t": 4.7,
+    "end": 4.96
+   }
+  ]
+ }
+}

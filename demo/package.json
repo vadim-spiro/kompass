@@ -1,0 +1,17 @@
+{
+  "name": "kompass-demo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "record": "node record.mjs",
+    "vo": "\"$HOME/Library/Application Support/claude-maxxing-voice/tts-env/bin/python\" -I video/tts.py",
+    "edit": "node video/edit.mjs",
+    "render": "node video/render.mjs",
+    "render:4k": "node video/render.mjs --scale=2",
+    "stills": "node video/render.mjs --stills",
+    "mix": "node video/mix.mjs"
+  },
+  "devDependencies": {
+    "playwright-core": "1.64.1"
+  }
+}

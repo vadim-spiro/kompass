@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@theme {
+  /* System font: looks native in the browser now and in the desktop shell later. */
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
+
+  --color-ink-950: #0b1220;
+  --color-ink-900: #111a2e;
+  --color-ink-800: #222c42;
+  --color-ink-700: #344056;
+  --color-ink-600: #46526b;
+  --color-ink-500: #586480;
+  /* ≥ 4.5:1 on white: small labels stay readable on a projector. */
+  --color-ink-400: #6e7990;
+  --color-ink-300: #b9c2d3;
+  --color-ink-200: #dde3ee;
+  --color-ink-100: #edf1f7;
+  --color-ink-50: #f6f8fb;
+
+  --color-navy-950: #061a40;
+  --color-navy-900: #0a2a66;
+  --color-navy-800: #0f3a85;
+  --color-navy-700: #1650b0;
+  --color-navy-100: #e3ecfb;
+  --color-navy-50: #f1f5fd;
+
+  --color-sun-400: #ffe500;
+  --color-sun-300: #fff066;
+  --color-sun-100: #fffbd6;
+
+  --color-good-600: #12805c;
+  --color-good-50: #e8f6f0;
+  --color-warn-600: #b45309;
+  --color-warn-50: #fdf3e3;
+  --color-bad-600: #c0362c;
+  --color-bad-50: #fdecea;
+  --color-violet-600: #6d43d1;
+  --color-violet-50: #f1ecfd;
+  --color-teal-600: #0f7c86;
+  --color-teal-50: #e6f5f6;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply text-ink-900 font-sans antialiased;
+  background: #f4f5f7;
+  font-size: 13.5px;
+  overflow: hidden;
+}
+
+/* Desktop window chrome: drag regions for the Electron/Tauri title bar. */
+.drag {
+  -webkit-app-region: drag;
+  user-select: none;
+}
+.drag button,
+.drag a,
+.drag input,
+.no-drag {
+  -webkit-app-region: no-drag;
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-navy-700);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* thin scrollbars inside panels */
+.scroll-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-ink-200) transparent;
+}
+
+.react-flow__attribution {
+  display: none;
+}
+
+/* Page scroll areas leave room for the Kompass bubble at the bottom. */
+.page-scroll {
+  padding-bottom: 120px;
+  scroll-padding-bottom: 120px;
+}
+
+/* Moving gradient ring around the bubble while Kompass works. */
+.kompass-ring {
+  background: linear-gradient(90deg, #6d43d1, #1650b0, #ffe500, #0f7c86, #6d43d1);
+  background-size: 300% 100%;
+  animation: kompass-ring 2.4s linear infinite;
+}
+@keyframes kompass-ring {
+  to {
+    background-position: 300% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, var(--color-ink-100) 0%, var(--color-ink-50) 50%, var(--color-ink-100) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kompass-ring,
+  .shimmer {
+    animation: none;
+  }
+}
+
+/* Recharts' keyboard layer takes focus on click; keep the ring for keyboard users only. */
+.recharts-wrapper :focus:not(:focus-visible),
+.recharts-surface:focus:not(:focus-visible) {
+  outline: none;
+}

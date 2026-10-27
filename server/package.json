@@ -1,0 +1,22 @@
+{
+  "name": "kompass-server",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch --env-file=../.env src/index.ts",
+    "start": "tsx --env-file=../.env src/index.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.1.5",
+    "hono": "^4.13.14",
+    "papaparse": "^5.7.0",
+    "yaml": "^2.9.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/papaparse": "^5.5.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}

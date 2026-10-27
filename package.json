@@ -1,0 +1,17 @@
+{
+  "name": "kompass",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -n server,web -c blue,magenta \"npm --prefix server run dev\" \"npm --prefix web run dev\"",
+    "desktop": "concurrently -k -n server,web,app -c blue,magenta,green \"npm --prefix server run dev\" \"npm --prefix web run dev\" \"npm --prefix desktop run dev\"",
+    "desktop:start": "npm --prefix web run build && npm --prefix desktop start",
+    "desktop:remote": "npm --prefix desktop run remote",
+    "install:all": "npm install && npm --prefix server install && npm --prefix web install && npm --prefix desktop install && npm --prefix demo install",
+    "demo:record": "npm --prefix demo run record",
+    "demo:video": "npm --prefix demo run render",
+    "demo:video:4k": "npm --prefix demo run render:4k"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.6"
+  }
+}
